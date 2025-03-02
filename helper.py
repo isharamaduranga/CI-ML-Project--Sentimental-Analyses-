@@ -18,7 +18,7 @@ translator = Translator()
 stemmer = RSLPStemmer()
 
 # ====== LOAD RESOURCES ====== #
-with open('static/model/logistic_regression_Latest_model.pkl', 'rb') as f:
+with open('static/model/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 with open('static/model/portuguese_vocabulary.txt', 'r', encoding='utf-8') as f:
