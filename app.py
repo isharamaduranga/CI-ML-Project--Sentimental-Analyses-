@@ -47,7 +47,11 @@ def my_post():
         data["positive"] += 1
 
     # Store the review
-    data["reviews"].insert(0, text)
+    data["reviews"].insert(0, {
+        "text": text,
+        "sentiment": prediction
+    })
+
     return redirect(request.url)  # Reload the page to update UI
 
 

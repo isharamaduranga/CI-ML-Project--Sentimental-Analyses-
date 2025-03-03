@@ -79,14 +79,17 @@
                             <div class="card-header bg-success text-white">
                                 <h5 class="mb-0"><i class="mdi mdi-comment-multiple-outline mr-2"></i>Latest Reviews</h5>
                             </div>
-                            <div class="card-body recent-reviews">
-                                {% for review in data.reviews %}
-                                <div class="review-item">
-                                    <div class="review-bubble">
-                                        <p>{{ review }}</p>
+                            <div class="card-body recent-reviews compact-reviews p-2">
+                               {% for review in data.reviews %}
+                                    <div class="review-item mb-2">
+                                        <div class="review-bubble compact-bubble position-relative">
+                                            <span class="sentiment-badge badge text-white {% if review.sentiment == 'positive' %}bg-success{% else %}bg-danger{% endif %}">
+                                                {{ review.sentiment|title }}
+                                            </span>
+                                            <p class="mb-0">{{ review.text }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                {% endfor %}
+                                    {% endfor %}
                             </div>
                         </div>
                     </div>

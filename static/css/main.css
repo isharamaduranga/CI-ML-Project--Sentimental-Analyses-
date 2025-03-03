@@ -97,3 +97,22 @@ body {
     max-height: 220px;
 }
 
+.sentiment-badge {
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    font-size: 0.5em;
+    padding: 3px 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.compact-bubble {
+    padding: 25px 12px 8px 12px!important;  /* Added top padding for badge */
+    position: relative;
+}
+
+.review-bubble:hover .sentiment-badge {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
